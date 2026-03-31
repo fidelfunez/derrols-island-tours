@@ -1,0 +1,5 @@
+# Allow all crawlers. Update Sitemap URL to your production domain if it differs from the default below.
+User-agent: *
+Allow: /
+
+Sitemap: https://derrolsislandtours.com/sitemap.xml

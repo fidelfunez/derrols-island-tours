@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-ocean: #004e89;
+  --color-turquoise: #1a936f;
+  --color-sand: #f2e9d8;
+  --color-coral: #e07a5f;
+  --color-coral-deep: #a84d35;
+  --color-dark: #1c1c1e;
+  --color-light: #fdfaf5;
+  /* Dark stained wood — footer (walnut / oak) */
+  --color-wood: #2c1810;
+  --color-wood-deep: #160b07;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  @apply bg-sand font-sans text-dark antialiased;
+}
+
+/* Off-screen gallery tiles skip layout/paint until near the viewport (lighter scroll). */
+.gallery-tile-cv {
+  content-visibility: auto;
+  contain-intrinsic-size: 320px 240px;
+}
+
+/* Subtle film grain (SVG noise) — hero overlay */
+.grain-overlay {
+  pointer-events: none;
+  opacity: 0.12;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
