@@ -247,7 +247,7 @@ export const tours = [
     id: "atv",
     tagKey: "Thrill" as const,
     coverImage: "/Photos/tour-card-covers/roatan-atv-quads-tour-cover.webp",
-    names: { en: "ATV Adventure", es: "Aventura en ATV" },
+    names: { en: "ATV & Beach Adventure", es: "Aventura en ATV y playa" },
     desc: {
       en: "Hit the island's rugged trails on an ATV and discover Roatán's wild interior from a whole new angle.",
       es: "Recorre los senderos de la isla en ATV y descubre el interior salvaje de Roatán desde una nueva perspectiva.",
