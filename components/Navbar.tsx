@@ -71,8 +71,8 @@ export function Navbar({
   }, []);
 
   const prefix = `/${locale}`;
-  /** Hero + #why: dark mark + shadow. Light sections after #tours: light mark. Menu open: light mark. */
-  const useLightMark = darkNavText || open;
+  /** Light logo on dark backdrops (hero + #why); dark logo when nav uses dark text (same as desktop). */
+  const useLightMark = !darkNavText;
   const bookWhatsAppHref = whatsappHref(
     locale === "es"
       ? "Hola Derrol, me gustaría reservar un tour."
@@ -207,7 +207,9 @@ export function Navbar({
           type="button"
           className={`flex h-11 w-11 items-center justify-center rounded-full border backdrop-blur md:hidden ${
             open
-              ? "border-dark/10 bg-light/90 text-dark"
+              ? darkNavText
+                ? "border-dark/10 bg-light/90 text-dark"
+                : "border-white/20 bg-dark/90 text-white"
               : barPinned && darkNavText
                 ? "border-dark/10 bg-light/90 text-dark"
                 : barPinned
@@ -221,13 +223,13 @@ export function Navbar({
           <span className="sr-only">Menu</span>
           <span className="flex flex-col gap-1.5" aria-hidden>
             <span
-              className={`block h-0.5 w-5 transition ${open || darkNavText ? "bg-dark" : "bg-white"} ${open ? "translate-y-2 rotate-45" : ""}`}
+              className={`block h-0.5 w-5 transition ${open ? (darkNavText ? "bg-dark" : "bg-white") : darkNavText ? "bg-dark" : "bg-white"} ${open ? "translate-y-2 rotate-45" : ""}`}
             />
             <span
-              className={`block h-0.5 w-5 transition ${open || darkNavText ? "bg-dark" : "bg-white"} ${open ? "opacity-0" : ""}`}
+              className={`block h-0.5 w-5 transition ${open ? (darkNavText ? "bg-dark" : "bg-white") : darkNavText ? "bg-dark" : "bg-white"} ${open ? "opacity-0" : ""}`}
             />
             <span
-              className={`block h-0.5 w-5 transition ${open || darkNavText ? "bg-dark" : "bg-white"} ${open ? "-translate-y-2 -rotate-45" : ""}`}
+              className={`block h-0.5 w-5 transition ${open ? (darkNavText ? "bg-dark" : "bg-white") : darkNavText ? "bg-dark" : "bg-white"} ${open ? "-translate-y-2 -rotate-45" : ""}`}
             />
           </span>
         </button>
@@ -241,7 +243,11 @@ export function Navbar({
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden border-b border-dark/5 bg-light/95 backdrop-blur-md md:hidden"
+            className={`overflow-hidden border-b backdrop-blur-md md:hidden ${
+              darkNavText
+                ? "border-dark/5 bg-light/95"
+                : "border-white/10 bg-dark/92"
+            }`}
           >
             <div className="flex flex-col gap-1 px-5 pb-6 pt-2">
               {links.map(({ href, label, cta }) =>
@@ -262,17 +268,53 @@ export function Navbar({
                     key={href}
                     href={href}
                     onClick={() => setOpen(false)}
-                    className="py-3 text-base font-medium text-dark/90"
+                    className={
+                      darkNavText
+                        ? "py-3 text-base font-medium text-dark/90 hover:text-dark"
+                        : "py-3 text-base font-medium text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.35)] hover:text-white/85"
+                    }
                   >
                     {label}
                   </Link>
                 )
               )}
-              <div className="mt-4 flex justify-center gap-4 border-t border-dark/10 pt-4 text-sm font-semibold">
-                <Link href="/en" hrefLang="en" onClick={() => setOpen(false)}>
+              <div
+                className={`mt-4 flex items-center justify-center gap-1 border-t pt-4 text-sm font-semibold ${
+                  darkNavText ? "border-dark/10" : "border-white/15"
+                }`}
+              >
+                <Link
+                  href="/en"
+                  hrefLang="en"
+                  onClick={() => setOpen(false)}
+                  className={
+                    locale === "en"
+                      ? "text-coral"
+                      : darkNavText
+                        ? "text-dark/50 hover:text-dark"
+                        : "text-white/85 hover:text-white"
+                  }
+                >
                   EN
                 </Link>
-                <Link href="/es" hrefLang="es" onClick={() => setOpen(false)}>
+                <span
+                  className={darkNavText ? "px-2 text-dark/30" : "px-2 text-white/40"}
+                  aria-hidden
+                >
+                  |
+                </span>
+                <Link
+                  href="/es"
+                  hrefLang="es"
+                  onClick={() => setOpen(false)}
+                  className={
+                    locale === "es"
+                      ? "text-coral"
+                      : darkNavText
+                        ? "text-dark/50 hover:text-dark"
+                        : "text-white/85 hover:text-white"
+                  }
+                >
                   ES
                 </Link>
               </div>
