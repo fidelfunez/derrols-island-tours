@@ -10,11 +10,12 @@ const TERA_PORTFOLIO_URL_FALLBACK = "https://teralatam.co";
 export const SITE = {
   whatsappE164: "50489725123",
   phoneDisplay: "+504 8972-5123",
-  /** Footer social — replace with Derrol’s real profile URLs. */
+  /** Footer + JSON-LD sameAs (canonical URLs, no tracking params). */
   social: {
-    facebook: "https://www.facebook.com/",
-    instagram: "https://www.instagram.com/",
-    tiktok: "https://www.tiktok.com/",
+    /** Resolves from the old share link; profile until a dedicated Page exists. */
+    facebook: "https://www.facebook.com/derrol.jackson.3",
+    instagram: "https://www.instagram.com/king_jackson07/",
+    tiktok: "https://www.tiktok.com/@jacksond0661",
   },
   /** Set NEXT_PUBLIC_SITE_URL in production for canonical URLs, OG tags, and JSON-LD. */
   get baseUrl() {

@@ -23,8 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const c = content[locale];
   const base = SITE.baseUrl;
   const path = `/${locale}`;
-  /** TODO: Replace with ${base}/og.jpg after adding a branded asset to /public. */
-  const ogImage = `https://placehold.co/1200x630/004E89/FDFAF5/png?text=Derrol%27s+Island+Tours`;
+  const ogImage = `${base}/Photos/og.png`;
 
   return {
     metadataBase: new URL(base),
@@ -49,9 +48,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [
         {
           url: ogImage,
-          width: 1200,
-          height: 630,
-          alt: "Derrol's Island Tours — Roatán",
+          width: 500,
+          height: 500,
+          alt: "Derrol's Island Tours, Roatán",
         },
       ],
     },

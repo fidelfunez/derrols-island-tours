@@ -21,6 +21,15 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Derrol's Island Tours",
   description: "Roatán tours and adventures with a local expert.",
+  manifest: "/Photos/favicon/site.webmanifest",
+  icons: {
+    icon: [
+      { url: "/Photos/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/Photos/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/Photos/favicon/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

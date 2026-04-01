@@ -97,13 +97,13 @@ export const content = {
     },
     hero: {
       label: "Isla de Roatán, Honduras",
-      headline: "Donde Empieza el Caribe",
+      headline: "Dónde empieza el Caribe",
       sub: "Tours auténticos con capitán y tripulación de Roatán — 14 años en el agua",
       cta: "Explorar Nuestros Tours",
     },
     toursSection: {
       title: "Nuestros Tours 🗺️",
-      sub: "Cada tour es privado, flexible y lo llevan el Capitán Derrol y su tripulación",
+      sub: "Cada tour es privado y flexible; lo llevan el capitán Derrol y su tripulación",
       bookThisTour: "Reservar Este Tour",
       contactPricing: "Consultar precio", // TODO: precios reales
     },
@@ -141,18 +141,18 @@ export const content = {
     gallery: {
       label: "Galería",
       title: "Momentos en la Isla 🏝️",
-      sub: "Fotos reales del mar, los senderos y las experiencias que compartimos con nuestros huéspedes — sin banco de imágenes.",
+      sub: "Fotos reales del mar, los senderos y las experiencias que compartimos con quienes nos visitan — sin banco de imágenes.",
       empty: "Pronto añadiremos más fotos de la isla.",
       imageAlt: "Foto de galería de tours en Roatán",
       loadMore: "Ver más fotos",
-      swipeHint: "Deslizá para ver más fotos",
+      swipeHint: "Desliza hacia los lados para ver más fotos",
     },
     booking: {
       title: "¿Listo para Explorar Roatán?",
       sub: "Olvídate de las agencias. Reserva directamente con Derrol por WhatsApp — rápido, fácil y personal.",
       mapCardTitle: "Todo empieza en la isla",
       mapCardSub:
-        "Ubicá Roatán en el mapa y escríbenos — Derrol y la tripulación te ayudan con el punto de encuentro y la logística del tour.",
+        "Mira Roatán en el mapa y escríbenos. Derrol y la tripulación te ayudan con el punto de encuentro y la logística del tour.",
       waCta: "Escríbele a Derrol por WhatsApp",
       locationLine: "Isla de Roatán, Honduras 🇭🇳",
       mapLoadCta: "Cargar mapa",

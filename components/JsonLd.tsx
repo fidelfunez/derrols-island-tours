@@ -24,7 +24,12 @@ export function JsonLd({ locale }: { locale: Locale }) {
       "@type": "Place",
       name: locale === "es" ? "Isla de Roatán, Honduras" : "Roatán Island, Honduras",
     },
-    sameAs: [whatsappHref()],
+    sameAs: [
+      SITE.social.facebook,
+      SITE.social.instagram,
+      SITE.social.tiktok,
+      whatsappHref(),
+    ],
   };
 
   return (
