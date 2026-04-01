@@ -3,9 +3,15 @@
  */
 export const BRAND = {
   logo: {
-    /** Dark-colored mark (file name “Dark”) — hero + footer wood. */
+    /**
+     * Light-colored mark (white) for dark backgrounds: hero, #why, footer wood.
+     * Filename says “dark-on-light-bg”; the artwork is the light mark.
+     */
     onLightBackground: "/Photos/Logos/roatan-derrol-island-tours-logo-dark-on-light-bg.webp",
-    /** Light-colored mark (file name “Light”) — nav after #tours, mobile menu on light bar. */
+    /**
+     * Dark-colored mark for light backgrounds: nav on sand, pinned bar.
+     * Filename says “light-on-dark-bg”; the artwork is the dark mark.
+     */
     onDarkBackground: "/Photos/Logos/roatan-derrol-island-tours-logo-light-on-dark-bg.webp",
     cardDarkBackground: "/Photos/Logos/roatan-derrol-island-tours-logo-card-dark-background.webp",
     cardLightBackground: "/Photos/Logos/roatan-derrol-island-tours-logo-card-light-background.webp",

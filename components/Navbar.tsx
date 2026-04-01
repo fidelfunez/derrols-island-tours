@@ -71,7 +71,7 @@ export function Navbar({
   }, []);
 
   const prefix = `/${locale}`;
-  /** Light logo on dark backdrops (hero + #why); dark logo when nav uses dark text (same as desktop). */
+  /** True on hero + #why (white nav text): use `onLightBackground` asset (light mark). Scrolled light sections: `onDarkBackground` (dark mark). */
   const useLightMark = !darkNavText;
   const bookWhatsAppHref = whatsappHref(
     locale === "es"
@@ -113,7 +113,7 @@ export function Navbar({
         >
           <Image
             src={
-              useLightMark ? BRAND.logo.onDarkBackground : BRAND.logo.onLightBackground
+              useLightMark ? BRAND.logo.onLightBackground : BRAND.logo.onDarkBackground
             }
             alt=""
             width={500}
