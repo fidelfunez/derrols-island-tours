@@ -206,7 +206,7 @@ export const tours = [
   {
     id: "shark",
     tagKey: "Adventure" as const,
-    coverImage: "/Photos/tour-card-covers/roatan-marine-life-shallow-snorkel-cover.webp",
+    coverImage: "/Photos/gallery/snorkeler-reaching-nurse-shark-clear-turquoise-water.webp",
     names: { en: "Shark Tour", es: "Tour de Tiburones" },
     desc: {
       en: "Snorkel alongside nurse sharks in crystal-clear shallows — a bucket-list experience.",

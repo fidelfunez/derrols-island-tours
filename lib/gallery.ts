@@ -9,6 +9,8 @@
  * (horizontal strip). Desktop shows the same initial count as a grid preview; full set opens in a lightbox.
  *
  * First entries are the original hero order; the rest follow alphabetically by filename.
+ *
+ * `galleryTileObjectPosition()` overrides `object-position` on tiles where center-crop clipped people.
  */
 export const GALLERY_INITIAL_COUNT = 6;
 export const GALLERY_LOAD_MORE_STEP = 6;
@@ -73,7 +75,86 @@ const remainderAlphabetical = [
   "/Photos/gallery/woman-wading-large-fish-clear-shallow-water-dock.webp",
 ] as const;
 
+/** Batch from `derrols-website-dowloads` (Apr 2026): shark snorkel, drinks, ATV, briefing. */
+const websiteDownloadsBatch = [
+  "/Photos/gallery/two-snorkelers-nurse-shark-turquoise-shallow-water-roatan.webp",
+  "/Photos/gallery/overhead-snorkelers-nurse-sharks-group-tropical-water.webp",
+  "/Photos/gallery/snorkeler-reaching-nurse-shark-clear-turquoise-water.webp",
+  "/Photos/gallery/snorkelers-nurse-sharks-stingrays-overhead-turquoise-water.webp",
+  "/Photos/gallery/woman-snorkeling-nurse-shark-black-bikini-tropical-water.webp",
+  "/Photos/gallery/nurse-shark-head-surface-closeup-turquoise-water.webp",
+  "/Photos/gallery/nurse-shark-side-profile-gills-sandy-bottom-underwater.webp",
+  "/Photos/gallery/nurse-shark-full-body-swimming-sandy-bottom-tropical-water.webp",
+  "/Photos/gallery/stingray-dorsal-spotted-pattern-shallow-turquoise-water.webp",
+  "/Photos/gallery/man-smiling-nurse-shark-foreground-clear-water-roatan.webp",
+  "/Photos/gallery/woman-floating-nurse-shark-turquoise-water-overhead.webp",
+  "/Photos/gallery/snorkeler-nurse-shark-diagonal-top-view-caribbean-water.webp",
+  "/Photos/gallery/nurse-sharks-sunlight-ripples-shallow-turquoise-water.webp",
+  "/Photos/gallery/nurse-shark-snout-closeup-surface-turquoise-water.webp",
+  "/Photos/gallery/michelada-chili-rim-mug-waterfront-bar-roatan.webp",
+  "/Photos/gallery/michelada-orange-cocktail-chili-salt-rim-wooden-bar.webp",
+  "/Photos/gallery/green-cocktail-frosted-mug-hand-outdoor-tropical-bar.webp",
+  "/Photos/gallery/group-four-friends-rustic-graffiti-bar-roatan.webp",
+  "/Photos/gallery/atv-tour-group-staging-dirt-lot-tropical-hills-roatan.webp",
+  "/Photos/gallery/atv-tour-line-riders-helmets-dirt-path-rainforest.webp",
+  "/Photos/gallery/atv-group-gathering-dirt-lot-palm-trees-roatan.webp",
+  "/Photos/gallery/atv-tour-riders-foreground-bearded-man-jungle-roatan.webp",
+  "/Photos/gallery/atv-lineup-jungle-dirt-path-riders-helmets-roatan.webp",
+  "/Photos/gallery/atv-group-nine-riders-smiling-dirt-road-tropical-forest.webp",
+  "/Photos/gallery/atv-tour-muddy-clearing-group-riders-palm-trees.webp",
+  "/Photos/gallery/st-patricks-day-party-hole-in-the-wall-poster-roatan.webp",
+  "/Photos/gallery/atv-adventure-briefing-pavilion-international-flags-roatan.webp",
+  "/Photos/gallery/atv-tour-welcome-briefing-area-lockers-tv-mural-roatan.webp",
+] as const;
+
 export const galleryImages: readonly string[] = [
   ...curatedFirst,
   ...remainderAlphabetical,
+  ...websiteDownloadsBatch,
 ];
+
+/**
+ * `object-position` for gallery tiles (`object-cover` + 4:3). Default is geometric center.
+ * Tuned so faces/torsos survive the crop; values are CSS `object-position` strings.
+ */
+const GALLERY_TILE_OBJECT_POSITION: Record<string, string> = {
+  // Strong top bias — heads were clipped or lost
+  "/Photos/gallery/guest-and-staff-waterfront-deck-bay-view-roatan.webp":
+    "center top",
+  "/Photos/gallery/tourists-couple-green-iguanas-feeding-sanctuary-roatan.webp":
+    "center 12%",
+  "/Photos/gallery/captain-skeleton-pirate-photo-op-nautical-dock-roatan.webp":
+    "center top",
+  "/Photos/gallery/st-patricks-hole-in-the-wall-party-shirt-roatan.webp":
+    "center 8%",
+  "/Photos/gallery/roatan-couple-waterfront-seafood-lunch-tour.webp":
+    "center 28%",
+  // Medium — tight headroom or partial clips
+  "/Photos/gallery/friends-selfie-tropical-bar-bay-view-roatan.webp":
+    "52% 22%",
+  "/Photos/gallery/pirate-costume-group-friends-wooden-deck-flags.webp":
+    "center 18%",
+  "/Photos/gallery/roatan-tiki-boat-group-shotski-caribbean-bar-tour.webp":
+    "center 22%",
+  "/Photos/gallery/tourists-feeding-iguanas-group-leaves.webp":
+    "center 18%",
+  "/Photos/gallery/tour-guests-socializing-dock-dive-boat-tropical-drinks.webp":
+    "58% 25%",
+  "/Photos/gallery/roatan-group-local-caribbean-lunch-tour.webp":
+    "center 22%",
+  "/Photos/gallery/woman-sea-turtle-encounter-clear-turquoise-water.webp":
+    "center 20%",
+  "/Photos/gallery/tourist-captain-hat-roatan-honduras-souvenir-outfit.webp":
+    "center 15%",
+  // Bias vertical — less roof/sky or more lower-frame subjects
+  "/Photos/gallery/large-group-snorkel-tour-palapa-boat-caribbean-ocean.webp":
+    "center 56%",
+  "/Photos/gallery/group-tourists-observing-large-iguanas-sanctuary.webp":
+    "center 32%",
+  "/Photos/gallery/roatan-group-snorkeling-boat-tropical-water.webp":
+    "center 60%",
+};
+
+export function galleryTileObjectPosition(src: string): string {
+  return GALLERY_TILE_OBJECT_POSITION[src] ?? "center";
+}

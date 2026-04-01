@@ -7,6 +7,7 @@ import {
   GALLERY_INITIAL_COUNT,
   GALLERY_LOAD_MORE_STEP,
   galleryImages,
+  galleryTileObjectPosition,
 } from "@/lib/gallery";
 import { GalleryLightbox } from "./GalleryLightbox";
 import { SectionDivider } from "./SectionDivider";
@@ -125,7 +126,10 @@ export function GallerySection({ copy }: { copy: Content["gallery"] }) {
                           loading="lazy"
                           decoding="async"
                           draggable={false}
-                          className="absolute inset-0 h-full w-full object-cover object-center select-none"
+                          className="absolute inset-0 h-full w-full object-cover select-none"
+                          style={{
+                            objectPosition: galleryTileObjectPosition(src),
+                          }}
                         />
                       </div>
                     </figure>
@@ -181,7 +185,10 @@ export function GallerySection({ copy }: { copy: Content["gallery"] }) {
                           loading="lazy"
                           decoding="async"
                           draggable={false}
-                          className="absolute inset-0 h-full w-full object-cover object-center transition duration-500 group-hover:scale-[1.03]"
+                          className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                          style={{
+                            objectPosition: galleryTileObjectPosition(src),
+                          }}
                         />
                       </div>
                     </button>

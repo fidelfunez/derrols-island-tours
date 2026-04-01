@@ -144,7 +144,7 @@ export function GalleryLightbox({
                   type="button"
                   onClick={onClose}
                   aria-label={labels.closeAria}
-                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-light text-2xl leading-none text-dark shadow-md ring-2 ring-dark/10 transition hover:bg-white hover:ring-dark/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark"
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-light text-2xl leading-none text-dark shadow-md ring-2 ring-dark/10 transition hover:bg-white hover:ring-dark/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-500 focus-visible:ring-offset-2 focus-visible:ring-offset-light"
                 >
                   ×
                 </button>
@@ -155,7 +155,7 @@ export function GalleryLightbox({
                   onClick={goPrev}
                   disabled={count <= 1}
                   aria-label={labels.prevAria}
-                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-light text-xl text-dark shadow-md ring-2 ring-dark/10 transition hover:bg-white hover:ring-dark/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark disabled:pointer-events-none disabled:opacity-35 md:h-12 md:w-12 md:text-2xl"
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-light text-xl text-dark shadow-md ring-2 ring-dark/10 transition hover:bg-white hover:ring-dark/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-500 focus-visible:ring-offset-2 focus-visible:ring-offset-light disabled:pointer-events-none disabled:opacity-35 md:h-12 md:w-12 md:text-2xl"
                 >
                   ‹
                 </button>
@@ -173,7 +173,7 @@ export function GalleryLightbox({
                   onClick={goNext}
                   disabled={count <= 1}
                   aria-label={labels.nextAria}
-                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-light text-xl text-dark shadow-md ring-2 ring-dark/10 transition hover:bg-white hover:ring-dark/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark disabled:pointer-events-none disabled:opacity-35 md:h-12 md:w-12 md:text-2xl"
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-light text-xl text-dark shadow-md ring-2 ring-dark/10 transition hover:bg-white hover:ring-dark/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-500 focus-visible:ring-offset-2 focus-visible:ring-offset-light disabled:pointer-events-none disabled:opacity-35 md:h-12 md:w-12 md:text-2xl"
                 >
                   ›
                 </button>
