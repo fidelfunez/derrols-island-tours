@@ -124,7 +124,7 @@ export function GalleryLightbox({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="absolute inset-0 cursor-default bg-dark/88 backdrop-blur-[2px]"
+            className="absolute inset-0 cursor-default bg-[rgb(28_28_30_/_0.94)] backdrop-blur-sm"
             onClick={onClose}
           />
           <div className="pointer-events-none absolute inset-0 flex items-center justify-center p-4 md:p-10">
@@ -136,7 +136,7 @@ export function GalleryLightbox({
               className="pointer-events-auto relative flex max-h-[min(90vh,920px)] w-full max-w-5xl flex-col gap-3"
             >
               <div className="flex shrink-0 items-center justify-between gap-4 px-1 text-light drop-shadow-md">
-                <p className="text-sm font-medium tabular-nums text-light/95">
+                <p className="text-sm font-medium tabular-nums text-light">
                   {labels.counter(safeIndex + 1, count)}
                 </p>
                 <button
@@ -144,7 +144,7 @@ export function GalleryLightbox({
                   type="button"
                   onClick={onClose}
                   aria-label={labels.closeAria}
-                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-light/10 text-2xl leading-none text-light ring-1 ring-light/25 transition hover:bg-light/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-light"
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-light text-2xl leading-none text-dark shadow-md ring-2 ring-dark/10 transition hover:bg-white hover:ring-dark/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark"
                 >
                   ×
                 </button>
@@ -155,11 +155,11 @@ export function GalleryLightbox({
                   onClick={goPrev}
                   disabled={count <= 1}
                   aria-label={labels.prevAria}
-                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-light/10 text-xl text-light ring-1 ring-light/25 transition hover:bg-light/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-light disabled:pointer-events-none disabled:opacity-35 md:h-12 md:w-12 md:text-2xl"
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-light text-xl text-dark shadow-md ring-2 ring-dark/10 transition hover:bg-white hover:ring-dark/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark disabled:pointer-events-none disabled:opacity-35 md:h-12 md:w-12 md:text-2xl"
                 >
                   ‹
                 </button>
-                <div className="relative min-h-0 min-w-0 flex-1 overflow-hidden rounded-2xl bg-dark/40 shadow-2xl ring-1 ring-light/15">
+                <div className="relative min-h-0 min-w-0 flex-1 overflow-hidden rounded-2xl bg-[rgb(28_28_30_/_0.82)] shadow-2xl ring-2 ring-light/20">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={src}
@@ -173,7 +173,7 @@ export function GalleryLightbox({
                   onClick={goNext}
                   disabled={count <= 1}
                   aria-label={labels.nextAria}
-                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-light/10 text-xl text-light ring-1 ring-light/25 transition hover:bg-light/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-light disabled:pointer-events-none disabled:opacity-35 md:h-12 md:w-12 md:text-2xl"
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-light text-xl text-dark shadow-md ring-2 ring-dark/10 transition hover:bg-white hover:ring-dark/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark disabled:pointer-events-none disabled:opacity-35 md:h-12 md:w-12 md:text-2xl"
                 >
                   ›
                 </button>

@@ -194,10 +194,10 @@ export function GallerySection({ copy }: { copy: Content["gallery"] }) {
                   <button
                     type="button"
                     onClick={() => openLightboxAt(0)}
-                    aria-label={copy.viewAllPhotos.replace("{count}", String(total))}
+                    aria-label={copy.viewAllPhotos}
                     className="cursor-pointer rounded-full border-2 border-[var(--color-coral-deep)] bg-transparent px-8 py-3 font-sans text-sm font-medium text-[var(--color-coral-deep)] transition hover:bg-[var(--color-coral-deep)] hover:text-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-coral-deep)] md:text-base"
                   >
-                    {copy.viewAllPhotos.replace("{count}", String(total))}
+                    {copy.viewAllPhotos}
                   </button>
                 </div>
               ) : null}

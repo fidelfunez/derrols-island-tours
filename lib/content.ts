@@ -65,7 +65,7 @@ export const content = {
       lightboxNextAria: "Next photo",
       lightboxDialogLabel: "Gallery photo viewer",
       lightboxOpenPhoto: "Open larger view",
-      viewAllPhotos: "View all {count} photos",
+      viewAllPhotos: "View all photos",
       lightboxCounter: "{current} of {total}",
     },
     booking: {
@@ -158,7 +158,7 @@ export const content = {
       lightboxNextAria: "Foto siguiente",
       lightboxDialogLabel: "Visor de fotos de la galería",
       lightboxOpenPhoto: "Abrir vista ampliada",
-      viewAllPhotos: "Ver las {count} fotos",
+      viewAllPhotos: "Ver todas las fotos",
       lightboxCounter: "{current} de {total}",
     },
     booking: {
