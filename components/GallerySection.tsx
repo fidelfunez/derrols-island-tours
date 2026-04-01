@@ -8,6 +8,7 @@ import {
   GALLERY_LOAD_MORE_STEP,
   galleryImages,
 } from "@/lib/gallery";
+import { GalleryLightbox } from "./GalleryLightbox";
 import { SectionDivider } from "./SectionDivider";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
@@ -25,15 +26,42 @@ export function GallerySection({ copy }: { copy: Content["gallery"] }) {
   const [visibleCount, setVisibleCount] = useState(() =>
     Math.min(GALLERY_INITIAL_COUNT, total)
   );
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   const visibleImages = useMemo(
     () => galleryImages.slice(0, visibleCount),
     [visibleCount]
   );
 
+  const desktopPreview = useMemo(
+    () => galleryImages.slice(0, Math.min(GALLERY_INITIAL_COUNT, total)),
+    [total]
+  );
+
   const canLoadMore = visibleCount < total;
   const remaining = total - visibleCount;
   const nextStep = Math.min(GALLERY_LOAD_MORE_STEP, remaining);
+  const hasMoreThanDesktopPreview = total > GALLERY_INITIAL_COUNT;
+
+  const openLightboxAt = (i: number) => {
+    setLightboxIndex(Math.min(Math.max(0, i), Math.max(0, total - 1)));
+    setLightboxOpen(true);
+  };
+
+  const lightboxLabels = useMemo(
+    () => ({
+      closeAria: copy.lightboxCloseAria,
+      prevAria: copy.lightboxPrevAria,
+      nextAria: copy.lightboxNextAria,
+      dialogLabel: copy.lightboxDialogLabel,
+      counter: (current: number, countTotal: number) =>
+        copy.lightboxCounter
+          .replace("{current}", String(current))
+          .replace("{total}", String(countTotal)),
+    }),
+    [copy]
+  );
 
   return (
     <section id="gallery" className="bg-light py-24 md:py-32">
@@ -125,9 +153,9 @@ export function GallerySection({ copy }: { copy: Content["gallery"] }) {
                 ) : null}
               </div>
 
-              {/* Desktop: grid + load more */}
+              {/* Desktop: fixed preview grid + lightbox for full collection */}
               <div className="hidden md:grid md:grid-cols-2 md:gap-5 lg:grid-cols-3">
-                {visibleImages.map((src, i) => (
+                {desktopPreview.map((src, i) => (
                   <motion.figure
                     key={src}
                     initial={reduced ? false : { opacity: 0, y: 20 }}
@@ -139,39 +167,50 @@ export function GallerySection({ copy }: { copy: Content["gallery"] }) {
                     }}
                     className="gallery-tile-cv m-0"
                   >
-                    <div className="group relative aspect-[4/3] overflow-hidden rounded-2xl shadow-[0_8px_40px_-12px_rgba(28,28,30,0.14)] ring-1 ring-dark/5 transition duration-300 hover:shadow-[0_16px_48px_-12px_rgba(28,28,30,0.2)]">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={src}
-                        alt={galleryAlt(copy, src)}
-                        loading="lazy"
-                        decoding="async"
-                        className="absolute inset-0 h-full w-full object-cover object-center transition duration-500 group-hover:scale-[1.03]"
-                      />
-                    </div>
+                    <button
+                      type="button"
+                      onClick={() => openLightboxAt(i)}
+                      aria-label={`${copy.lightboxOpenPhoto} — ${lightboxLabels.counter(i + 1, total)}`}
+                      className="group block w-full cursor-pointer rounded-2xl text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-coral-deep)]"
+                    >
+                      <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-[0_8px_40px_-12px_rgba(28,28,30,0.14)] ring-1 ring-dark/5 transition duration-300 group-hover:shadow-[0_16px_48px_-12px_rgba(28,28,30,0.2)]">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={src}
+                          alt={galleryAlt(copy, src)}
+                          loading="lazy"
+                          decoding="async"
+                          draggable={false}
+                          className="absolute inset-0 h-full w-full object-cover object-center transition duration-500 group-hover:scale-[1.03]"
+                        />
+                      </div>
+                    </button>
                   </motion.figure>
                 ))}
               </div>
 
-              {canLoadMore ? (
+              {hasMoreThanDesktopPreview ? (
                 <div className="mt-10 hidden flex-col items-center gap-2 md:flex">
                   <button
                     type="button"
-                    onClick={() =>
-                      setVisibleCount((n) =>
-                        Math.min(n + GALLERY_LOAD_MORE_STEP, total)
-                      )
-                    }
-                    aria-label={`${copy.loadMore} (${nextStep})`}
+                    onClick={() => openLightboxAt(0)}
+                    aria-label={copy.viewAllPhotos.replace("{count}", String(total))}
                     className="cursor-pointer rounded-full border-2 border-[var(--color-coral-deep)] bg-transparent px-8 py-3 font-sans text-sm font-medium text-[var(--color-coral-deep)] transition hover:bg-[var(--color-coral-deep)] hover:text-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-coral-deep)] md:text-base"
                   >
-                    {copy.loadMore}
+                    {copy.viewAllPhotos.replace("{count}", String(total))}
                   </button>
-                  <p className="text-xs text-dark/45 md:text-sm">
-                    {visibleCount} / {total}
-                  </p>
                 </div>
               ) : null}
+
+              <GalleryLightbox
+                open={lightboxOpen}
+                images={galleryImages}
+                index={lightboxIndex}
+                onClose={() => setLightboxOpen(false)}
+                onIndexChange={setLightboxIndex}
+                getAlt={(s) => galleryAlt(copy, s)}
+                labels={lightboxLabels}
+              />
             </>
           ) : (
             <motion.p

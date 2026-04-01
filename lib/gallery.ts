@@ -5,8 +5,8 @@
  * portrait/landscape shots align in a clean grid (verticals are center-cropped).
  * Order = display order (row by row, left to right).
  *
- * Homepage shows `GALLERY_INITIAL_COUNT` first; “Load more” adds `GALLERY_LOAD_MORE_STEP` at a time.
- * Mobile uses the same visible window + load more (avoids mounting all images at once).
+ * Homepage: mobile shows `GALLERY_INITIAL_COUNT` first; “Load more” adds `GALLERY_LOAD_MORE_STEP`
+ * (horizontal strip). Desktop shows the same initial count as a grid preview; full set opens in a lightbox.
  */
 export const GALLERY_INITIAL_COUNT = 6;
 export const GALLERY_LOAD_MORE_STEP = 6;
