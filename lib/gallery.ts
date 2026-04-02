@@ -107,10 +107,31 @@ const websiteDownloadsBatch = [
   "/Photos/gallery/atv-tour-welcome-briefing-area-lockers-tv-mural-roatan.webp",
 ] as const;
 
+/** Apr 2026 — import from `public/Photos/new pics` (SEO filenames, WebP q82). */
+const newPicsApr2026 = [
+  "/Photos/gallery/hole-in-the-wall-bar-guest-capt-ed-sign-jonesville-roatan.webp",
+  "/Photos/gallery/hole-in-the-wall-group-bar-graffiti-jonesville-roatan.webp",
+  "/Photos/gallery/hole-in-the-wall-michelada-cocktail-rustic-wood-table-roatan.webp",
+  "/Photos/gallery/hole-in-the-wall-restaurant-dock-honduras-flag-jonesville-roatan.webp",
+  "/Photos/gallery/hole-in-the-wall-spicy-margarita-glass-chili-rim-roatan.webp",
+  "/Photos/gallery/hole-in-the-wall-tour-waterfront-restaurant-sign-roatan.webp",
+  "/Photos/gallery/roatan-floating-tiki-bar-snorkeling-tour-aerial.webp",
+  "/Photos/gallery/roatan-sloth-encounter-guest-wildlife-tour.webp",
+  "/Photos/gallery/roatan-tiki-boat-adventures-guests-bar-signs.webp",
+  "/Photos/gallery/roatan-tiki-boat-aerial-turquoise-reef-palapa.webp",
+  "/Photos/gallery/roatan-tiki-boat-tour-guests-rustic-bar-colorful-chairs.webp",
+  "/Photos/gallery/roatan-tour-group-red-boat-white-sand-beach.webp",
+  "/Photos/gallery/roatan-wildlife-tour-capuchin-monkey-guest.webp",
+  "/Photos/gallery/west-bay-beach-palms-turquoise-water-roatan.webp",
+  "/Photos/gallery/west-bay-roatan-caribbean-turquoise-water-sky.webp",
+  "/Photos/gallery/west-bay-roatan-turquoise-water-swimmers-beach.webp",
+] as const;
+
 export const galleryImages: readonly string[] = [
   ...curatedFirst,
   ...remainderAlphabetical,
   ...websiteDownloadsBatch,
+  ...newPicsApr2026,
 ];
 
 /**
@@ -152,7 +173,19 @@ const GALLERY_TILE_OBJECT_POSITION: Record<string, string> = {
   "/Photos/gallery/group-tourists-observing-large-iguanas-sanctuary.webp":
     "center 32%",
   "/Photos/gallery/roatan-group-snorkeling-boat-tropical-water.webp":
+    "center 50%",
+  "/Photos/gallery/hole-in-the-wall-tour-waterfront-restaurant-sign-roatan.webp":
     "center 60%",
+  "/Photos/gallery/hole-in-the-wall-bar-guest-capt-ed-sign-jonesville-roatan.webp":
+    "center 12%",
+  "/Photos/gallery/hole-in-the-wall-michelada-cocktail-rustic-wood-table-roatan.webp":
+    "center 35%",
+  "/Photos/gallery/hole-in-the-wall-spicy-margarita-glass-chili-rim-roatan.webp":
+    "center 38%",
+  "/Photos/gallery/roatan-tiki-boat-aerial-turquoise-reef-palapa.webp":
+    "center 45%",
+  "/Photos/gallery/roatan-floating-tiki-bar-snorkeling-tour-aerial.webp":
+    "center 48%",
 };
 
 export function galleryTileObjectPosition(src: string): string {

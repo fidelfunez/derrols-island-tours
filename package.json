@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "encode:hero": "bash scripts/encode-hero-video.sh",
-    "optimize:gallery": "bash scripts/optimize-gallery-webp.sh"
+    "optimize:gallery": "bash scripts/optimize-gallery-webp.sh",
+    "import:new-pics": "python3 scripts/import-new-pics-webp.py"
   },
   "dependencies": {
     "framer-motion": "^11.11.17",

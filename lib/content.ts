@@ -20,6 +20,17 @@ export const content = {
       sub: "Every tour is private, flexible, and led by Capt. Derrol and crew",
       bookThisTour: "Book This Tour",
       contactPricing: "Contact for pricing", // TODO: replace with real pricing when available
+      spotlight: {
+        eyebrow: "East End favorites",
+        title: "After the mangroves — or on their own",
+        sub:
+          "Most guests pair a mangrove tour with a stop at Hole in the Wall, or spend a full day on a private Tiki Boat. Both are boat-only East End icons — book either solo or stack them with your day on the water.",
+        prevAria: "Previous experience",
+        nextAria: "Next experience",
+        dotHoleAria: "Show Hole in the Wall",
+        dotTikiAria: "Show Tiki Boat Adventures",
+        swipeHint: "Swipe the photo to switch",
+      },
     },
     about: {
       label: "Your Guide",
@@ -113,6 +124,17 @@ export const content = {
       sub: "Cada tour es privado y flexible; lo llevan el capitán Derrol y su tripulación",
       bookThisTour: "Reservar Este Tour",
       contactPricing: "Consultar precio", // TODO: precios reales
+      spotlight: {
+        eyebrow: "Favoritos del East End",
+        title: "Después del manglar — o por su cuenta",
+        sub:
+          "Muchos invitados combinan el tour de manglar con una parada en Hole in the Wall, o dedican el día a un Tiki Boat privado. Ambos son solo en bote e iconos del East End — reserva cada uno solo o súmalos a tu día en el agua.",
+        prevAria: "Experiencia anterior",
+        nextAria: "Experiencia siguiente",
+        dotHoleAria: "Ver Hole in the Wall",
+        dotTikiAria: "Ver Tiki Boat Adventures",
+        swipeHint: "Desliza la foto para cambiar",
+      },
     },
     about: {
       label: "Tu Guía",
@@ -255,6 +277,33 @@ export const tours = [
   },
 ] as const;
 
+/** Boat-only East End experiences (spotlight carousel below main tour grid). */
+export const tourSpotlightSlides = [
+  {
+    id: "hole-in-the-wall",
+    tagKey: "Culture" as const,
+    coverImage:
+      "/Photos/gallery/hole-in-the-wall-tour-waterfront-restaurant-sign-roatan.webp",
+    /** Portrait venue shot — bias up so the sign and roof read in wide spotlight crops. */
+    coverImageObjectPosition: "center 50%" as const,
+    names: { en: "Hole in the Wall", es: "Hole in the Wall" },
+    desc: {
+      en: "A legendary floating bar and restaurant in the mangroves near Jonesville — cold drinks, local flavor, and a famous Sunday steak & lobster brunch. Only reachable by boat: rustic, eclectic, and a true hidden gem.",
+      es: "Bar y restaurante flotante legendario en los manglares cerca de Jonesville — bebidas frías, sabor local y un brunch dominical de filete y langosta. Solo en bote: rústico, único y una joya escondida.",
+    },
+  },
+  {
+    id: "tiki-boat",
+    tagKey: "Adventure" as const,
+    coverImage: "/Photos/gallery/tiki-boat-roatan-map-bar-shotski-tourists.webp",
+    names: { en: "Tiki Boat Adventures", es: "Tiki Boat Adventures" },
+    desc: {
+      en: "Private themed cruises along Roatán’s quieter East End and South Shore — mangrove tunnels, multiple snorkel stops, nurse shark encounters, open bar, lunch, and nonstop island vibes. Built for groups and families who want the full day.",
+      es: "Cruceros privados temáticos por el East End y la costa sur de Roatán — túneles de manglar, varias paradas de snorkel, tiburones nodriza, bar abierto, almuerzo y puro ambiente isleño. Ideal para grupos y familias que quieren el día completo.",
+    },
+  },
+] as const;
+
 const tagLabels: Record<(typeof tours)[number]["tagKey"], Record<Locale, string>> = {
   Nature: { en: "Nature", es: "Naturaleza" },
   Adventure: { en: "Adventure", es: "Aventura" },
@@ -264,6 +313,10 @@ const tagLabels: Record<(typeof tours)[number]["tagKey"], Record<Locale, string>
   Thrill: { en: "Thrill", es: "Adrenalina" },
 };
 
+export function getTagLabel(tagKey: (typeof tours)[number]["tagKey"], locale: Locale) {
+  return tagLabels[tagKey][locale];
+}
+
 export function getTourTag(tour: (typeof tours)[number], locale: Locale) {
-  return tagLabels[tour.tagKey][locale];
+  return getTagLabel(tour.tagKey, locale);
 }
