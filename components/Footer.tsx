@@ -70,7 +70,7 @@ export function Footer({
         <div className="mx-auto flex max-w-6xl flex-col gap-10 px-5 py-14 md:flex-row md:items-center md:justify-between md:px-8">
           <Link
             href={prefix}
-            className="flex items-center gap-3 font-display text-xl italic tracking-tight text-light transition-colors hover:text-sand md:gap-3.5 md:text-2xl"
+            className="flex items-center justify-center gap-3 self-center font-display text-xl italic tracking-tight text-light transition-colors hover:text-sand md:justify-start md:self-auto md:gap-3.5 md:text-2xl"
           >
             <Image
               src={BRAND.logo.onLightBackground}
