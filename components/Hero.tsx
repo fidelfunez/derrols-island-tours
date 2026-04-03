@@ -48,7 +48,7 @@ export function Hero({ locale, copy }: { locale: Locale; copy: Content["hero"] }
           {reduced ? (
             <Image
               src={HERO_IMAGE}
-              alt=""
+              alt={c.backgroundImageAlt}
               fill
               className="object-cover"
               priority

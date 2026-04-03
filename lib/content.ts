@@ -14,6 +14,9 @@ export const content = {
       headline: "Where the Caribbean Begins",
       sub: "Authentic island tours led by a born-and-raised local captain and crew — 14 years on the water",
       cta: "Explore Our Tours",
+      /** Shown when `prefers-reduced-motion` replaces video with the static hero image. */
+      backgroundImageAlt:
+        "Turquoise Caribbean waters and coastline of Roatán, Honduras — Derrol's Island Tours private boat excursions",
     },
     toursSection: {
       title: "Our Tours 🗺️",
@@ -120,6 +123,8 @@ export const content = {
       headline: "Dónde empieza el Caribe",
       sub: "Tours auténticos con capitán y tripulación de Roatán — 14 años en el agua",
       cta: "Explorar Nuestros Tours",
+      backgroundImageAlt:
+        "Aguas turquesas del Caribe y costa de Roatán, Honduras — excursiones en bote privado con Derrol's Island Tours",
     },
     toursSection: {
       title: "Nuestros Tours 🗺️",

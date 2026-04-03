@@ -1,6 +1,7 @@
 /**
  * Site-wide constants — single place to update contact & URLs.
- * When you change the production domain, also update `public/sitemap.xml` and `public/robots.txt`
+ * When you change the production domain, also update `public/sitemap.xml` and `public/robots.txt`.
+ * Social preview image: `public/Photos/og-social.jpg` (1200×630); regenerate from hero if you replace the banner.
  * (Next metadata routes are avoided here because apostrophes in the project folder path break the build).
  */
 

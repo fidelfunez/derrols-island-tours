@@ -9,11 +9,17 @@ export function JsonLd({ locale }: { locale: Locale }) {
 
   const data = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "Touroperator"],
     name: "Derrol's Island Tours",
     description: c.meta.description,
     url: `${base}/${locale}`,
     telephone: `+${SITE.whatsappE164}`,
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      availableLanguage: ["English", "Spanish"],
+      url: whatsappHref(),
+    },
     address: {
       "@type": "PostalAddress",
       addressLocality: "Roatán",

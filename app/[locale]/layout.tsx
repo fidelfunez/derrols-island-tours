@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const c = content[locale];
   const base = SITE.baseUrl;
   const path = `/${locale}`;
-  const ogImage = `${base}/Photos/og.png`;
+  const ogImage = `${base}/Photos/og-social.jpg`;
 
   return {
     metadataBase: new URL(base),
@@ -48,9 +48,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [
         {
           url: ogImage,
-          width: 500,
-          height: 500,
-          alt: "Derrol's Island Tours, Roatán",
+          width: 1200,
+          height: 630,
+          type: "image/jpeg",
+          alt: "Derrol's Island Tours — Roatán boat tours and Caribbean shoreline",
         },
       ],
     },

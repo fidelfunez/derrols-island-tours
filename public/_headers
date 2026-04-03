@@ -1,0 +1,8 @@
+# Copied to static export root — honored by Netlify, Cloudflare Pages, and similar hosts.
+# HSTS is usually set at the CDN; add there if your provider does not enable it by default.
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()

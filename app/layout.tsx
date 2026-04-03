@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import { content } from "@/lib/content";
+import { defaultLocale } from "@/lib/i18n";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -18,9 +20,11 @@ const dmSans = DM_Sans({
   weight: ["400", "500", "600"],
 });
 
+const rootMeta = content[defaultLocale].meta;
+
 export const metadata: Metadata = {
-  title: "Derrol's Island Tours",
-  description: "Roatán tours and adventures with a local expert.",
+  title: rootMeta.title,
+  description: rootMeta.description,
   manifest: "/Photos/favicon/site.webmanifest",
   icons: {
     icon: [
