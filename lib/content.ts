@@ -20,6 +20,8 @@ export const content = {
       sub: "Every tour is private, flexible, and led by Capt. Derrol and crew",
       bookThisTour: "Book This Tour",
       contactPricing: "Contact for pricing", // TODO: replace with real pricing when available
+      tourCardSwipeHint: "Swipe for more photos",
+      tourCardPhotoCounter: "{current} of {total}",
       spotlight: {
         eyebrow: "East End favorites",
         title: "After the mangroves — or on their own",
@@ -124,6 +126,8 @@ export const content = {
       sub: "Cada tour es privado y flexible; lo llevan el capitán Derrol y su tripulación",
       bookThisTour: "Reservar Este Tour",
       contactPricing: "Consultar precio", // TODO: precios reales
+      tourCardSwipeHint: "Desliza para ver más fotos",
+      tourCardPhotoCounter: "{current} de {total}",
       spotlight: {
         eyebrow: "Favoritos del East End",
         title: "Después del manglar — o por su cuenta",
@@ -219,6 +223,13 @@ export const tours = [
     id: "mangrove",
     tagKey: "Nature" as const,
     coverImage: "/Photos/tour-card-covers/roatan-mangrove-boat-tour-cover.webp",
+    /** Mobile-only swipe stack (4); first matches `coverImage`. Rest are strongest mangrove / East End channel–dock shots in gallery. */
+    cardSwipeImages: [
+      "/Photos/tour-card-covers/roatan-mangrove-boat-tour-cover.webp",
+      "/Photos/gallery/morning-coffee-dock-motorboats-mangrove-channel-roatan.webp",
+      "/Photos/gallery/waterfront-seafood-lunch-group-mangrove-view-restaurant.webp",
+      "/Photos/gallery/hole-in-the-wall-deck-docked-boat-turquoise-water.webp",
+    ] as const,
     names: { en: "Mangrove Tour", es: "Tour de Manglar" },
     desc: {
       en: "Glide through Roatán's mangrove tunnels — nature at its calmest, up close.",
@@ -229,6 +240,12 @@ export const tours = [
     id: "shark",
     tagKey: "Adventure" as const,
     coverImage: "/Photos/gallery/snorkeler-reaching-nurse-shark-clear-turquoise-water.webp",
+    cardSwipeImages: [
+      "/Photos/gallery/snorkeler-reaching-nurse-shark-clear-turquoise-water.webp",
+      "/Photos/gallery/two-snorkelers-nurse-shark-turquoise-shallow-water-roatan.webp",
+      "/Photos/gallery/man-smiling-nurse-shark-foreground-clear-water-roatan.webp",
+      "/Photos/gallery/overhead-snorkelers-nurse-sharks-group-tropical-water.webp",
+    ] as const,
     names: { en: "Shark Tour", es: "Tour de Tiburones" },
     desc: {
       en: "Snorkel alongside nurse sharks in crystal-clear shallows — a bucket-list experience.",
@@ -239,6 +256,12 @@ export const tours = [
     id: "island",
     tagKey: "Exploration" as const,
     coverImage: "/Photos/tour-card-covers/roatan-island-aerial-coastline-cover.webp",
+    cardSwipeImages: [
+      "/Photos/tour-card-covers/roatan-island-aerial-coastline-cover.webp",
+      "/Photos/gallery/roatan-scenic-rock-islet-turquoise-water.webp",
+      "/Photos/gallery/roatan-private-tour-boat-turquoise-lagoon.webp",
+      "/Photos/gallery/roatan-sunset-boat-caribbean-bay.webp",
+    ] as const,
     names: { en: "Island Tour", es: "Tour de la Isla" },
     desc: {
       en: "Explore the best of Roatán by land and sea — beaches, culture, and hidden gems only a local knows.",
@@ -249,6 +272,12 @@ export const tours = [
     id: "food",
     tagKey: "Culture" as const,
     coverImage: "/Photos/tour-card-covers/roatan-local-food-caribbean-plate-cover.webp",
+    cardSwipeImages: [
+      "/Photos/tour-card-covers/roatan-local-food-caribbean-plate-cover.webp",
+      "/Photos/gallery/roatan-fried-fish-rice-beans-local-plate.webp",
+      "/Photos/gallery/roatan-group-local-caribbean-lunch-tour.webp",
+      "/Photos/gallery/grilled-lobster-shrimp-seafood-plates-group-island-lunch.webp",
+    ] as const,
     names: { en: "Local Food & Sandy Bay", es: "Comida Local y Sandy Bay" },
     desc: {
       en: "Taste authentic Caribbean flavors and unwind at the stunning Sandy Bay beach.",
@@ -259,6 +288,13 @@ export const tours = [
     id: "wildlife",
     tagKey: "Wildlife" as const,
     coverImage: "/Photos/tour-card-covers/roatan-wildlife-capuchin-monkeys-cover.webp",
+    /** Monkeys + one iguana shot; fourth is sloth (only other clear park encounter in gallery besides iguana crowds). */
+    cardSwipeImages: [
+      "/Photos/tour-card-covers/roatan-wildlife-capuchin-monkeys-cover.webp",
+      "/Photos/gallery/roatan-wildlife-tour-capuchin-monkey-guest.webp",
+      "/Photos/gallery/woman-iguana-on-back-wildlife-encounter-island-tour.webp",
+      "/Photos/gallery/roatan-sloth-encounter-guest-wildlife-tour.webp",
+    ] as const,
     names: { en: "Animal Park & Nature", es: "Parque Animal y Naturaleza" },
     desc: {
       en: "Get up close with Roatán's exotic wildlife — monkeys, sloths, parrots, and more in their natural habitat.",
@@ -269,6 +305,12 @@ export const tours = [
     id: "atv",
     tagKey: "Thrill" as const,
     coverImage: "/Photos/tour-card-covers/roatan-atv-quads-tour-cover.webp",
+    cardSwipeImages: [
+      "/Photos/tour-card-covers/roatan-atv-quads-tour-cover.webp",
+      "/Photos/gallery/atv-group-nine-riders-smiling-dirt-road-tropical-forest.webp",
+      "/Photos/gallery/atv-lineup-jungle-dirt-path-riders-helmets-roatan.webp",
+      "/Photos/gallery/atv-tour-line-riders-helmets-dirt-path-rainforest.webp",
+    ] as const,
     names: { en: "ATV & Beach Adventure", es: "Aventura en ATV y playa" },
     desc: {
       en: "Hit the island's rugged trails on an ATV and discover Roatán's wild interior from a whole new angle.",
