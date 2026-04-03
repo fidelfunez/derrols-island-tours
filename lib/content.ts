@@ -228,12 +228,12 @@ export const tours = [
     id: "mangrove",
     tagKey: "Nature" as const,
     coverImage: "/Photos/tour-card-covers/roatan-mangrove-boat-tour-cover.webp",
-    /** Mobile-only swipe stack (4); first matches `coverImage`. Rest are strongest mangrove / East End channel–dock shots in gallery. */
+    /** Mobile-only swipe stack (4); first matches `coverImage` (Jonesville mangrove sign). */
     cardSwipeImages: [
       "/Photos/tour-card-covers/roatan-mangrove-boat-tour-cover.webp",
-      "/Photos/gallery/morning-coffee-dock-motorboats-mangrove-channel-roatan.webp",
-      "/Photos/gallery/waterfront-seafood-lunch-group-mangrove-view-restaurant.webp",
-      "/Photos/gallery/hole-in-the-wall-deck-docked-boat-turquoise-water.webp",
+      "/Photos/gallery/roatan-mangrove-tunnel-boat-waterway-canopy.webp",
+      "/Photos/gallery/roatan-mangrove-tour-guests-boat-forest-channel.webp",
+      "/Photos/gallery/roatan-mangrove-tour-family-turquoise-lagoon-fruit.webp",
     ] as const,
     names: { en: "Mangrove Tour", es: "Tour de Manglar" },
     desc: {
@@ -263,14 +263,14 @@ export const tours = [
     coverImage: "/Photos/tour-card-covers/roatan-island-aerial-coastline-cover.webp",
     cardSwipeImages: [
       "/Photos/tour-card-covers/roatan-island-aerial-coastline-cover.webp",
-      "/Photos/gallery/roatan-scenic-rock-islet-turquoise-water.webp",
-      "/Photos/gallery/roatan-private-tour-boat-turquoise-lagoon.webp",
-      "/Photos/gallery/roatan-sunset-boat-caribbean-bay.webp",
+      "/Photos/gallery/roatan-lighthouse-caribbean-island-tour.webp",
+      "/Photos/gallery/roatan-chocolate-factory-experience-bay-islands.webp",
+      "/Photos/gallery/roatan-west-end-town-coastal-tour.webp",
     ] as const,
     names: { en: "Island Tour", es: "Tour de la Isla" },
     desc: {
-      en: "Explore the best of Roatán by land and sea — beaches, culture, and hidden gems only a local knows.",
-      es: "Explora lo mejor de Roatán por tierra y mar — playas, cultura y rincones secretos que solo un local conoce.",
+      en: "Explore the best of Roatán by car — beaches, culture, and hidden gems only a local knows.",
+      es: "Explora lo mejor de Roatán en carro — playas, cultura y rincones secretos que solo un local conoce.",
     },
   },
   {

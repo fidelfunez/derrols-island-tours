@@ -127,11 +127,39 @@ const newPicsApr2026 = [
   "/Photos/gallery/west-bay-roatan-turquoise-water-swimmers-beach.webp",
 ] as const;
 
+/** Island tour — lighthouse, chocolate factory, West End (WebP q82). */
+const islandTourGallery2026 = [
+  "/Photos/gallery/roatan-chocolate-factory-experience-bay-islands.webp",
+  "/Photos/gallery/roatan-lighthouse-caribbean-island-tour.webp",
+  "/Photos/gallery/roatan-west-end-town-coastal-tour.webp",
+] as const;
+
+/** Mangrove tour — dedicated batch (WebP q82, SEO filenames). */
+const mangroveTourGallery2026 = [
+  "/Photos/gallery/roatan-jonesville-point-mangrove-tour-guests-i-love-mangroves-sign.webp",
+  "/Photos/gallery/roatan-jonesville-point-mangroves-sign-dock-roatan.webp",
+  "/Photos/gallery/roatan-mangrove-boat-channel-guest-green-shirt.webp",
+  "/Photos/gallery/roatan-mangrove-coastline-turquoise-water-blue-sky.webp",
+  "/Photos/gallery/roatan-mangrove-forest-turquoise-shallow-water-roatan.webp",
+  "/Photos/gallery/roatan-mangrove-lagoon-group-guests-swimming.webp",
+  "/Photos/gallery/roatan-mangrove-roots-clear-turquoise-water-sky.webp",
+  "/Photos/gallery/roatan-mangrove-tour-family-turquoise-lagoon-fruit.webp",
+  "/Photos/gallery/roatan-mangrove-tour-group-women-clear-turquoise-water.webp",
+  "/Photos/gallery/roatan-mangrove-tour-guests-boat-forest-channel.webp",
+  "/Photos/gallery/roatan-mangrove-tour-guests-swimming-palapa-shoreline.webp",
+  "/Photos/gallery/roatan-mangrove-tunnel-boat-three-guests-sunny.webp",
+  "/Photos/gallery/roatan-mangrove-tunnel-boat-tour-guests-pov.webp",
+  "/Photos/gallery/roatan-mangrove-tunnel-boat-waterway-canopy.webp",
+  "/Photos/gallery/roatan-shallow-water-stingray-guest-swimming.webp",
+] as const;
+
 export const galleryImages: readonly string[] = [
   ...curatedFirst,
   ...remainderAlphabetical,
   ...websiteDownloadsBatch,
   ...newPicsApr2026,
+  ...islandTourGallery2026,
+  ...mangroveTourGallery2026,
 ];
 
 /**
