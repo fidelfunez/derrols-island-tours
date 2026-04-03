@@ -333,9 +333,16 @@ function TourSpotlightCarousel({
             <p className="sr-only" aria-live="polite">
               {name}
             </p>
-            <p className="pointer-events-none absolute bottom-3 left-0 right-0 text-center text-xs text-light/90 drop-shadow-md md:hidden">
-              {sc.swipeHint}
-            </p>
+            <div className="pointer-events-none absolute bottom-8 left-0 right-0 z-10 flex justify-center px-3 md:hidden">
+              <p
+                className="max-w-[min(100%,18rem)] rounded-full px-3.5 py-1.5 text-center text-[0.7rem] font-medium leading-tight text-light shadow-[0_2px_14px_rgba(0,0,0,0.5)] ring-1 ring-black/50"
+                style={{
+                  backgroundColor: "color-mix(in srgb, var(--color-dark) 80%, transparent)",
+                }}
+              >
+                {sc.swipeHint}
+              </p>
+            </div>
           </div>
 
           <div className="flex flex-col justify-center gap-5 p-8 md:p-10 lg:pl-12">
