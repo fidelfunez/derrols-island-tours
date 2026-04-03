@@ -28,6 +28,7 @@ function TourCardMobileCarousel({
   swipeHint,
   photoCounterTemplate,
   priority,
+  sharkTint,
 }: {
   images: readonly string[];
   name: string;
@@ -35,6 +36,8 @@ function TourCardMobileCarousel({
   swipeHint: string;
   photoCounterTemplate: string;
   priority: boolean;
+  /** Same ocean wash as desktop shark card; kept under dots/hint so the pill stays solid. */
+  sharkTint?: boolean;
 }) {
   const [slideIndex, setSlideIndex] = useState(0);
   const touchStartX = useRef<number | null>(null);
@@ -66,7 +69,7 @@ function TourCardMobileCarousel({
           go(1);
         }
       }}
-      className="relative h-full w-full touch-pan-y outline-none focus-visible:ring-2 focus-visible:ring-turquoise focus-visible:ring-offset-2 focus-visible:ring-offset-light"
+      className="relative isolate h-full w-full touch-pan-y outline-none focus-visible:ring-2 focus-visible:ring-turquoise focus-visible:ring-offset-2 focus-visible:ring-offset-light"
       onTouchStart={(e) => {
         touchStartX.current = e.targetTouches[0].clientX;
       }}
@@ -86,7 +89,7 @@ function TourCardMobileCarousel({
           animate={{ opacity: 1 }}
           exit={reduced ? undefined : { opacity: 0 }}
           transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute inset-0"
+          className="absolute inset-0 z-0"
         >
           <Image
             src={src}
@@ -98,11 +101,17 @@ function TourCardMobileCarousel({
           />
         </motion.div>
       </AnimatePresence>
+      {sharkTint && (
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 z-[1] mix-blend-soft-light bg-ocean/35"
+        />
+      )}
       <p className="sr-only" aria-live="polite">
         {counter}
       </p>
       <div
-        className="pointer-events-none absolute bottom-2 left-0 right-0 flex justify-center gap-1.5"
+        className="pointer-events-none absolute bottom-2 left-0 right-0 z-10 flex justify-center gap-1.5"
         aria-hidden
       >
         {images.map((_, i) => (
@@ -114,9 +123,17 @@ function TourCardMobileCarousel({
           />
         ))}
       </div>
-      <p className="pointer-events-none absolute bottom-7 left-0 right-0 text-center text-[0.65rem] text-light/90 drop-shadow-sm">
-        {swipeHint}
-      </p>
+      <div className="pointer-events-none absolute bottom-8 left-0 right-0 z-10 flex justify-center px-3">
+        <p
+          className="max-w-[min(100%,18rem)] rounded-full px-3.5 py-1.5 text-center text-[0.7rem] font-medium leading-tight text-light shadow-[0_2px_14px_rgba(0,0,0,0.5)] ring-1 ring-black/50"
+          style={{
+            /* `bg-dark/80` is unreliable when `dark` is a CSS variable — use color-mix. */
+            backgroundColor: "color-mix(in srgb, var(--color-dark) 80%, transparent)",
+          }}
+        >
+          {swipeHint}
+        </p>
+      </div>
     </div>
   );
 }
@@ -171,12 +188,13 @@ function TourCard({
             swipeHint={sectionCopy.tourCardSwipeHint}
             photoCounterTemplate={sectionCopy.tourCardPhotoCounter}
             priority={index === 0}
+            sharkTint={tour.id === "shark"}
           />
         </div>
         {tour.id === "shark" && (
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-0 mix-blend-soft-light bg-ocean/35"
+            className="pointer-events-none absolute inset-0 hidden mix-blend-soft-light bg-ocean/35 md:block"
           />
         )}
       </div>
