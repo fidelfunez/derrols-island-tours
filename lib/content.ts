@@ -106,9 +106,10 @@ export const content = {
       aria: "Back to top",
     },
     meta: {
-      title: "Derrol's Island Tours | Roatán Tours & Adventures",
+      /** Lead with “Roatan tours” for English queries (with/without accent). */
+      title: "Roatan Tours | Derrol's Island Tours — Roatán, Honduras",
       description:
-        "Book authentic tours in Roatán, Honduras directly with Derrol — local captain and crew, 14 years of experience. Mangrove tours, shark snorkeling, island excursions and more. WhatsApp booking.",
+        "Roatan tours with Capt. Derrol — mangroves, shark snorkel, island by car, food & ATV. Book direct on WhatsApp. Local crew, 14 years experience.",
     },
   },
   es: {
@@ -214,9 +215,10 @@ export const content = {
       aria: "Volver al inicio de la página",
     },
     meta: {
-      title: "Derrol's Island Tours | Tours y Aventuras en Roatán",
+      /** “Tours en Roatán” matches common Spanish searches. */
+      title: "Tours en Roatán | Derrol's Island Tours — Honduras",
       description:
-        "Reserva tours auténticos en Roatán, Honduras directamente con Derrol — capitán y tripulación locales, 14 años de experiencia. Manglares, tiburones, excursiones y más. Reserva por WhatsApp.",
+        "Tours en Roatán con el capitán Derrol — manglar, tiburones, isla en carro, comida y ATV. Reserva directo por WhatsApp. Tripulación local, 14 años de experiencia.",
     },
   },
 } as const;
