@@ -6,6 +6,18 @@ import { JsonLd } from "@/components/JsonLd";
 import { Hero } from "@/components/Hero";
 import { ToursSection } from "@/components/ToursSection";
 
+const FleetSection = dynamic(
+  () =>
+    import("@/components/FleetSection").then((m) => ({
+      default: m.FleetSection,
+    })),
+  {
+    loading: () => (
+      <DeferredSectionSkeleton variant="light" />
+    ),
+  }
+);
+
 const AboutSection = dynamic(
   () =>
     import("@/components/AboutSection").then((m) => ({
@@ -95,6 +107,7 @@ export default function HomePage({ params }: Props) {
       <JsonLd locale={locale} />
       <Hero locale={locale} copy={copy.hero} />
       <ToursSection locale={locale} copy={copy.toursSection} />
+      <FleetSection copy={copy.fleet} />
       <AboutSection copy={copy.about} />
       <WhyChooseUs copy={copy.why} />
       <GallerySection copy={copy.gallery} />

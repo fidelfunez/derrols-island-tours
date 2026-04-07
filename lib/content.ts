@@ -6,6 +6,7 @@ export const content = {
     nav: {
       home: "Home",
       tours: "Tours",
+      fleet: "Boats & rides",
       about: "About",
       bookNow: "Book Now",
     },
@@ -36,6 +37,59 @@ export const content = {
         dotTikiAria: "Show Tiki Boat Adventures",
         swipeHint: "Swipe the photo to switch",
       },
+    },
+    fleet: {
+      label: "Our fleet",
+      title: "Boats & wheels — what you actually ride",
+      sub:
+        "Private boats for mangrove runs, snorkel days, and the East End — plus vans or minibuses for island tours and our ATV lineup on jungle trails. Swipe each card on your phone to browse photos.",
+      kindLabels: { boat: "Boats", land: "Land" },
+      cardSwipeHint: "Swipe for more photos",
+      cardPhotoCounter: "{current} of {total}",
+      items: [
+        {
+          kind: "boat" as const,
+          title: "Private tour boats",
+          body:
+            "Real shots of what we run on the water — private charters built around your group, not packed party boats. Mangrove tunnels, nurse-shark snorkel, and full days on the bay with Capt. Derrol and crew.",
+          cardSwipeImages: [
+            "/Photos/gallery/roatan-charter-boat-waterfront-landscape-roatan.webp",
+            "/Photos/gallery/roatan-private-tour-boat-turquoise-lagoon.webp",
+            "/Photos/gallery/white-tour-boat-suzuki-outboard-turquoise-harbor-roatan.webp",
+            "/Photos/gallery/red-white-charter-boat-pirate-flags-wooden-pier-roatan.webp",
+            "/Photos/gallery/tour-boat-approaching-tropical-beach-passengers-canopy.webp",
+          ] as const,
+          imageAlts: [
+            "Private charter boat from above on clear turquoise water, Roatán",
+            "Private tour boat in a calm turquoise lagoon, Roatán",
+            "White tour boat with outboard motor in a turquoise harbor, Roatán",
+            "Red and white charter boat with pirate flags at a wooden pier, Roatán",
+            "Tour boat with canopy approaching a tropical beach with guests, Roatán",
+          ] as const,
+        },
+        {
+          kind: "land" as const,
+          title: "Vans, rides & ATV fleet",
+          body:
+            "Island tours use a comfortable private van or minibus so pickups and stops stay easy. Our ATV adventure runs its own four-wheel lineup on jungle trails — helmets, quick briefing, and a pace that fits your group.",
+          cardSwipeImages: [
+            "/Photos/gallery/roatan-tour-boat-dock-guest-ready-roatan.webp",
+            "/Photos/gallery/roatan-derrol-tour-vessel-turquoise-lagoon-honduras.webp",
+            "/Photos/gallery/roatan-derrol-charter-boat-promo-graphic-wide.webp",
+            "/Photos/gallery/roatan-private-boat-excursion-marketing-banner-roatan.webp",
+            "/Photos/gallery/roatan-private-tour-boat-dock-portrait-caribbean.webp",
+            "/Photos/gallery/atv-lineup-jungle-dirt-path-riders-helmets-roatan.webp",
+          ] as const,
+          imageAlts: [
+            "Silver passenger van parked for island tours, Roatán",
+            "Silver tour van with palm trees — private ground transport, Roatán",
+            "Row of white transport vans on a brick-paved lot",
+            "White tour van side view with passenger accessibility decals, Roatán",
+            "Comfortable minibus interior with rows of seats for tour guests",
+            "ATV tour lineup on a jungle dirt path in Roatán",
+          ] as const,
+        },
+      ],
     },
     about: {
       label: "Your Guide",
@@ -116,6 +170,7 @@ export const content = {
     nav: {
       home: "Inicio",
       tours: "Tours",
+      fleet: "Botes y transporte",
       about: "Nosotros",
       bookNow: "Reservar",
     },
@@ -145,6 +200,59 @@ export const content = {
         dotTikiAria: "Ver Tiki Boat Adventures",
         swipeHint: "Desliza la foto para cambiar",
       },
+    },
+    fleet: {
+      label: "Nuestra flota",
+      title: "Botes y ruedas — en qué te movés",
+      sub:
+        "Botes privados para manglar, snorkel y el East End — más van o minibus para el tour de isla y la fila de ATV en senderos de selva. En el celular, deslizá cada tarjeta para ver más fotos.",
+      kindLabels: { boat: "Botes", land: "Tierra" },
+      cardSwipeHint: "Desliza para ver más fotos",
+      cardPhotoCounter: "{current} de {total}",
+      items: [
+        {
+          kind: "boat" as const,
+          title: "Botes privados de tour",
+          body:
+            "Fotos reales de lo que usamos en el agua — charters privados pensados para tu grupo, no lanchas llenas de gente. Manglar, tiburones nodriza y días enteros en la bahía con el capitán Derrol y la tripulación.",
+          cardSwipeImages: [
+            "/Photos/gallery/roatan-charter-boat-waterfront-landscape-roatan.webp",
+            "/Photos/gallery/roatan-private-tour-boat-turquoise-lagoon.webp",
+            "/Photos/gallery/white-tour-boat-suzuki-outboard-turquoise-harbor-roatan.webp",
+            "/Photos/gallery/red-white-charter-boat-pirate-flags-wooden-pier-roatan.webp",
+            "/Photos/gallery/tour-boat-approaching-tropical-beach-passengers-canopy.webp",
+          ] as const,
+          imageAlts: [
+            "Bote charter privado visto desde arriba en agua turquesa clara, Roatán",
+            "Bote de tour privado en laguna turquesa tranquila, Roatán",
+            "Bote de tour blanco con motor fueraborda en puerto turquesa, Roatán",
+            "Bote charter rojo y blanco con banderas pirata en muelle de madera, Roatán",
+            "Bote de tour con toldo acercándose a playa tropical con huéspedes, Roatán",
+          ] as const,
+        },
+        {
+          kind: "land" as const,
+          title: "Van, traslados y fila de ATV",
+          body:
+            "El tour de isla va en van o minibus privado cómodo para que traslados y paradas sean sencillos. El tour en ATV usa su propia fila de cuatrimotos en senderos de selva — cascos, briefing rápido y ritmo según el grupo.",
+          cardSwipeImages: [
+            "/Photos/gallery/roatan-tour-boat-dock-guest-ready-roatan.webp",
+            "/Photos/gallery/roatan-derrol-tour-vessel-turquoise-lagoon-honduras.webp",
+            "/Photos/gallery/roatan-derrol-charter-boat-promo-graphic-wide.webp",
+            "/Photos/gallery/roatan-private-boat-excursion-marketing-banner-roatan.webp",
+            "/Photos/gallery/roatan-private-tour-boat-dock-portrait-caribbean.webp",
+            "/Photos/gallery/atv-lineup-jungle-dirt-path-riders-helmets-roatan.webp",
+          ] as const,
+          imageAlts: [
+            "Van plateada estacionada para tours por la isla, Roatán",
+            "Van de tour plateada con palmeras — transporte terrestre privado, Roatán",
+            "Fila de vans blancos de transporte en calle empedrada",
+            "Van de tour blanca de perfil con señales de accesibilidad para pasajeros, Roatán",
+            "Interior cómodo de minibus con filas de asientos para huéspedes del tour",
+            "Fila de ATV en sendero de selva, tour en Roatán",
+          ] as const,
+        },
+      ],
     },
     about: {
       label: "Tu Guía",

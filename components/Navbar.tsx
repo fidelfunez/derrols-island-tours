@@ -86,6 +86,7 @@ export function Navbar({
   const links: { href: string; label: string; cta?: boolean }[] = [
     { href: prefix, label: labels.home },
     { href: `${prefix}#tours`, label: labels.tours },
+    { href: `${prefix}#fleet`, label: labels.fleet },
     { href: `${prefix}#about`, label: labels.about },
     { href: bookWhatsAppHref, label: labels.bookNow, cta: true },
   ];

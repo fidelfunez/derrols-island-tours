@@ -153,6 +153,16 @@ const mangroveTourGallery2026 = [
   "/Photos/gallery/roatan-shallow-water-stingray-guest-swimming.webp",
 ] as const;
 
+/** Former fleet folder — boat promos now live under `public/Photos/gallery` (WebP q82). */
+const fleetPhotosGallery2026 = [
+  "/Photos/gallery/roatan-charter-boat-waterfront-landscape-roatan.webp",
+  "/Photos/gallery/roatan-derrol-charter-boat-promo-graphic-wide.webp",
+  "/Photos/gallery/roatan-derrol-tour-vessel-turquoise-lagoon-honduras.webp",
+  "/Photos/gallery/roatan-private-boat-excursion-marketing-banner-roatan.webp",
+  "/Photos/gallery/roatan-private-tour-boat-dock-portrait-caribbean.webp",
+  "/Photos/gallery/roatan-tour-boat-dock-guest-ready-roatan.webp",
+] as const;
+
 export const galleryImages: readonly string[] = [
   ...curatedFirst,
   ...remainderAlphabetical,
@@ -160,6 +170,7 @@ export const galleryImages: readonly string[] = [
   ...newPicsApr2026,
   ...islandTourGallery2026,
   ...mangroveTourGallery2026,
+  ...fleetPhotosGallery2026,
 ];
 
 /**

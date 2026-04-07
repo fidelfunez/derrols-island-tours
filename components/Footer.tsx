@@ -99,6 +99,12 @@ export function Footer({
               {nav.tours}
             </Link>
             <Link
+              href={`${prefix}#fleet`}
+              className="text-light transition-colors hover:text-sand hover:underline hover:decoration-sand/80 hover:underline-offset-4"
+            >
+              {nav.fleet}
+            </Link>
+            <Link
               href={`${prefix}#about`}
               className="text-light transition-colors hover:text-sand hover:underline hover:decoration-sand/80 hover:underline-offset-4"
             >
