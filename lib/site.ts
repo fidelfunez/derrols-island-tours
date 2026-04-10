@@ -13,9 +13,8 @@ export const SITE = {
   phoneDisplay: "+504 8972-5123",
   /** Footer + JSON-LD sameAs (canonical URLs, no tracking params). */
   social: {
-    /** Resolves from the old share link; profile until a dedicated Page exists. */
-    facebook: "https://www.facebook.com/derrol.jackson.3",
-    instagram: "https://www.instagram.com/king_jackson07/",
+    facebook: "https://www.facebook.com/share/1LGGvfzf3t/",
+    instagram: "https://www.instagram.com/derrolislandtours/",
     tiktok: "https://www.tiktok.com/@jacksond0661",
   },
   /** Set NEXT_PUBLIC_SITE_URL in production for canonical URLs, OG tags, and JSON-LD. */
